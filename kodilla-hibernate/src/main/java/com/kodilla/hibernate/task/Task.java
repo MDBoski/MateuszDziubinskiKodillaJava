@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.task.dao;
+package com.kodilla.hibernate.task;
 
 import com.kodilla.hibernate.tasklist.TaskList;
 
