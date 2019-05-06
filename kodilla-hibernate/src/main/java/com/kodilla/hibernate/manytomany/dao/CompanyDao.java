@@ -6,14 +6,15 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Transactional
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {
-
     @Query(nativeQuery = true)
-    List<Company> retrieveCompanyNameLike(@Param("NAME") String name);
+    List<Company> retrieveCompanyName (@Param("THREE_LETTERS") String threeLetters);
+
+    @Query
+    List<Company> findCompanyByFragment (@Param("ARG") String arg);
 }
